@@ -22,4 +22,4 @@ change the following items in the config file based on your configuration token 
 
 Add the following entry to the root crontab so the script will run every 5 minutes.
 
-*/5 * * * * cd /usr/local/oktaEventLogs; ./oktaEventLogs.pyCatoNetworks Integration for DefenseStorm
+*/5 * * * * cd /usr/local/oktaEventLogs; ./oktaEventLogs.py
