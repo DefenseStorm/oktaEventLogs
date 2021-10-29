@@ -24,6 +24,8 @@ class integration(object):
         'client_ipAddress' : 'client_ip',
         'actor_id' : 'user_id',
         'client_userAgent_rawUserAgent' : 'user_agent',
+        'displayName' : 'target_username',
+        'detailEntry' : 'email',
     }
 
     def getEvents(self):
@@ -101,6 +103,7 @@ class integration(object):
             e['category'] = 'logs'
             e['timestamp'] = e['published'][:-5] + 'Z'
             ret_list.append(e)
+            print(json.dumps(e))
         old_link = ""
 
         while events.links['next']['url'] != old_link and 'next' in events.links:
@@ -121,6 +124,7 @@ class integration(object):
                     break
                 e['category'] = 'logs'
                 e['timestamp'] = e['published'][:-5] + 'Z'
+                print(json.dumps(e))
                 ret_list.append(e)
         return ret_list
 
